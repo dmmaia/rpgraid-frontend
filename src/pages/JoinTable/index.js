@@ -18,7 +18,6 @@ export default function JoinTable({history}) {
     async function handleCreateTable(event){
 
         const response = await api.post('/tables', {tableName, UserId});
-        console.log(response)
 
     }
 

@@ -39,6 +39,12 @@ export default function Table({ history }) {
 			case 'd12':
 				roll = Math.random() * (13 - 1) + 1;
 				break;
+			case 'd20':
+				roll = Math.random() * (21 - 1) + 1;
+				break;
+			case 'd100':
+				roll = Math.random() * (101 - 1) + 1;
+				break;
 		}
 		let realroll = parseInt(roll);
 		return realroll;
