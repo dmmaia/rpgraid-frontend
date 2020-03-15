@@ -26,13 +26,13 @@ export default function Login({history}){
 			<input  
 			type="text"
 			id="Username"
-			placeholder="Nome de usuário"
+			placeholder="Your user name!"
 			value={userName}
 			onChange={event => setUserName(event.target.value)}
 			required
 			/>
 
-			<button className="btn" type="submit" >Entrar</button>
+			<button className="btn" type="submit" >Login</button>
 		</form>
 	</div>
 	);
