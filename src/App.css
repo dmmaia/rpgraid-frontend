@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body,#root{
+  min-height: 100%;
+}
+
+body{
+  background: #ffe364 url('./assets/background.png') no-repeat;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.btn{
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 42px;
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: bold;
+  background: green;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+/*Login*/
+div.container-Input{
+  margin: 80px auto 0;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #606060;
+  font-size: 20px;
+  background: #fff4c4;
+
+  width: 100%;
+  background: #fff;
+  margin-top: 50px;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.container-Input form input{
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  height: 45px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+/*Table Config*/
+.join-Table{
+  border: #ffe364 solid 2px;
+  width: 100%;
+  height: 150px;
+}
+
+.newTable{
+  overflow-y: scroll;
+}
+.newTableBtn{
+  background: chartreuse;
+  margin-bottom: 5px;
+  border: green solid 1px;
+}
+
+/*Table*/
+div.container-Mesa{
+  margin: 80px auto 0;
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #606060;
+  font-size: 16px;
+  background: #fff4c4;
+  margin-top: auto;
+  border-radius: 4px;
+  padding: 30px;
+  max-height: 100vh;
+}
+
+.container-Mesa form input{
+  width: 30%;
+  height: 4vh;
+  font-size: 20px;
+  position: relative;
+}
+
+.container-connection{
+  margin: 2vh;
+  width: 20%;
+  height: 30vh;
+  background: white;
+  position: absolute;
+}
+
+.container-connection p{
+  padding: 1vh;
+  background-color: rgb(245, 203, 66);
+  font-size: 18px;
+  border: sandybrown solid 1px;
+  font-weight: bolder;
+}
+.container-connection input{
+  font-size: 18px;
+  width: 90%;
+}
+
+div#Roll{
+  min-height: 600px;
+  width: 100%;
+  background: #fff;
+  max-height: 50vh;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+}
+
+#Roll:last-child {
+  scroll-snap-align: end;
+}
+
+
+#Roll p{
+  font-size: 40px;
+  margin-bottom: 10px;
+  border-bottom: rgb(248, 171, 141) solid 1px;
+}
+#Roll h4{
+  font-size: 25px;
+  margin-bottom: 15px;
+}
