@@ -52,9 +52,10 @@ export default function Table({ history }) {
 
 	async function handleRoll(event) {
 		event.preventDefault();
-		if(!valueRoll[0] === NaN){
+		
 			const response = await api.post('/rolls', { valueRoll, userName, userId, tableId })
-		}
+			console.log(response) 
+
 		
 	}
 
