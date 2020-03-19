@@ -23,7 +23,7 @@ export default function Table({ history }) {
 
 	function Roll(d) {
 		let roll
-		switch (d) {
+		switch (d.toLowerCase()) {
 			case 'd4':
 				roll = Math.random() * (5 - 1) + 1;
 				break;
