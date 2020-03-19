@@ -52,8 +52,10 @@ export default function Table({ history }) {
 
 	async function handleRoll(event) {
 		event.preventDefault();
-		const response = await api.post('/rolls', { valueRoll, userName, userId, tableId })
-		console.log(response)
+		if(!valueRoll[0] === NaN){
+			const response = await api.post('/rolls', { valueRoll, userName, userId, tableId })
+		}
+		
 	}
 
 	return (
@@ -65,7 +67,7 @@ export default function Table({ history }) {
 			<div className="container-Mesa">
 
 				<div id="Roll">
-					<FeedRoll valueRoll={numberDice} />
+					<FeedRoll />
 				</div>
 
 				<form onSubmit={handleRoll}>
