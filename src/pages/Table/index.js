@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 
-import FeedRoll from './FeedRoll'
+import FeedRoll from './FeedRoll';
+import ToggleMenu from './ToggleMenu';
 
 export default function Table({ history }) {
 
-	const [valueRoll, setValueRoll] = useState([])
-	const [numberDice, setNumberDice] = useState()
-	const [dice, setDice] = useState()
+	const [valueRoll, setValueRoll] = useState([]);
+	const [numberDice, setNumberDice] = useState();
+	const [dice, setDice] = useState();
 
-	const userId = localStorage.getItem(['user'])
-	const userName = localStorage.getItem(['name'])
-	const tableId = localStorage.getItem(['idTable'])
+	const userId = localStorage.getItem(['user']);
+	const userName = localStorage.getItem(['name']);
+	const tableId = localStorage.getItem(['idTable']);
 
 	if (!userId) {
 		history.push('/');
@@ -59,11 +60,21 @@ export default function Table({ history }) {
 		
 	}
 
+	function handleDisplayAdressMobile(){
+		var elementAdress = document.getElementById('cc');
+		elementAdress.classList.toggle('mobile-display');
+
+		var elementToggleMenu = document.getElementById('toggle-menu');
+		elementToggleMenu.classList.toggle('clicked');
+	}
+
 	return (
 		<div>
-			<div className="container-connection">
+			<div className="container-connection mobile-display" id="cc">
 				<p>Adress: <input type="text" value={tableId} /></p>
 			</div>
+
+			<a onClick={handleDisplayAdressMobile}><ToggleMenu /></a>
 
 			<div className="container-Mesa">
 

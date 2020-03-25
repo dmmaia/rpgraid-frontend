@@ -87,12 +87,21 @@ div.container-Mesa{
   background: #fff4c4;
   margin-top: auto;
   border-radius: 4px;
+  border: sienna solid 1px;
 }
 
 @media screen and (max-width: 600px){
   .container-connection{
-    display: none;
+    z-index: 9;
+    right: 0;
+    height: 70vh;
+    border: sienna solid 1px;
 }
+
+.mobile-display{
+  opacity: 0;
+}
+
   div#Roll{
     margin-top: 1vh;
     width: 94vw;
@@ -120,11 +129,42 @@ div.container-Mesa{
     margin-bottom: 10px;
     border-bottom: rgb(248, 171, 141) solid 1px;
   }
+
+  #toggle-menu div{
+    width: 10vw;
+    height: 4px;
+    background-color: rgb(255, 81, 0);
+    margin-bottom: 4px;
+  }
+
+  #toggle-menu{
+    position: absolute;
+    z-index: 10;
+    right: 4vw;
+    top: 3vh;
+    opacity: 0.8;
+  }
+
+  .clicked .midBar{
+    opacity: 0;
+  }
+  .clicked .first{
+    transform: rotateZ(45deg);
+    margin-top: 10px;
+    
+  }
+  .clicked .last{
+    transform: rotateZ(-45deg);
+    margin-top: -15.5px;
+    
+  }
 }
 
 @media screen and (max-width: 1007px) and (min-width: 601px){
   .container-connection{
     left: 0px;
+    width: 20%;
+    height: 30vh;
 }
   div#Roll{
     width: 65vw;
@@ -153,6 +193,12 @@ div.container-Mesa{
 }
 
 @media (min-width: 1008px){
+
+  .container-connection{
+    width: 20%;
+    height: 30vh;
+  }
+
   div#Roll{
     min-height: 600px;
     width: 100%;
@@ -183,8 +229,6 @@ div.container-Mesa{
 
 .container-connection{
   margin: 2vh;
-  width: 20%;
-  height: 30vh;
   background: white;
   position: absolute;
 }
