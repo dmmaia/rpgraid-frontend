@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 
+import { FaTrash } from "react-icons/fa";
+
 import {
     BrowserRouter as Router,
     Link
@@ -14,22 +16,28 @@ export default function ExistentTable() {
     useEffect(() => {
         async function loadTables() {
             const responseTable = await api.post('/tables', { UserId })
-            console.log(responseTable.data)
             if (responseTable.data != null) {
                 setTables(responseTable.data)
             }
         }
 
         loadTables()
-    }, [])
+    }, [tables])
 
     return (
         <>
             {
                 tables.map((data, index) => {
-                    return <Link to="/sessions" key={index}><button className='btn newTableBtn'  onClick={() => {
+                    return <div className="tableJoin" key={index}>
+                    <Link to="/sessions" ><button className='btn newTableBtn'  onClick={() => {
                         localStorage.setItem('idTable', data._id)
                     }} >{data.tableName}</button></Link>
+                    <a onClick={async function(){
+                        let _id = data._id;
+                        const responseDelete = await api.delete('/delete', {headers: {_id}})
+                        console.log(responseDelete);
+                    }}><FaTrash /></a>
+                    </div>
                 })
             }
         </>

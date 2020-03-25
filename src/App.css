@@ -19,7 +19,7 @@ body{
 .btn{
   border: 0;
   border-radius: 2px;
-  width: 100%;
+  width: 94%;
   height: 42px;
   padding: 0 16px;
   font-size: 16px;
@@ -76,6 +76,17 @@ div.container-Input{
   margin-bottom: 5px;
   border: green solid 1px;
 }
+
+.tableJoin svg{
+  float: right;
+  margin-top: 10px;
+  color: red;
+}
+
+.tableJoin svg:hover{
+  background-color: #cccccc;
+}
+
 
 /*Table*/
 div.container-Mesa{
