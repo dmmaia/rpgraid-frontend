@@ -13,12 +13,12 @@ export default function JoinTable({history}) {
 		history.push('/');
     }
 
-    const [tableName, setTableName] = useState()
+    const [tableName, setTableName] = useState();
 
     async function handleCreateTable(event){
-
+        event.preventDefault();
         const response = await api.post('/tables', {tableName, UserId});
-
+        setTableName('');
     }
 
   return (
@@ -34,7 +34,7 @@ export default function JoinTable({history}) {
         <div className="join-Table">
             <form onSubmit={handleCreateTable}>
                 <input name="newtable" type="text" value={tableName} onChange={event => setTableName(event.target.value)} placeholder="Table name" required />
-                <input type="submit" value="Create Table" className="btn" />
+                <input type="submit" value="Create Table" id="btn3" className="btn" />
             </form>
         </div>
     </div>
