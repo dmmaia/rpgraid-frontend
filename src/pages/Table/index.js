@@ -69,7 +69,7 @@ export default function Table({ history }) {
 	}
 
 	return (
-		<div>
+		<div className="desk">
 			<div className="container-connection mobile-display" id="cc">
 				<p>Adress: <input type="text" value={tableId} /></p>
 			</div>

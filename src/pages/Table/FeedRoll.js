@@ -7,6 +7,8 @@ export default function FeedRoll(props) {
 
     const tableId = localStorage.getItem('idTable')
 
+    const thisUser = localStorage.getItem('name')
+
     useEffect(()=>{
         async function loadFeed() {
             const response = await api.post('/rolls', { tableId })
