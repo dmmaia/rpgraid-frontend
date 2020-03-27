@@ -193,6 +193,8 @@ div.container-Mesa{
   div#Roll{
     width: 65vw;
     height: 75vh;
+    margin-top: 2vh;
+    padding-top: 1vh;
   }
   div.container-Mesa{
     position: absolute;
@@ -213,6 +215,7 @@ div.container-Mesa{
     font-size: 40px;
     margin-bottom: 10px;
     border-bottom: rgb(248, 171, 141) solid 1px;
+    padding-left: 1vw;
   }
 }
 
@@ -230,10 +233,11 @@ div.container-Mesa{
     min-height: 600px;
     width: 100%;
     max-height: 50vh;
+    padding-top: 1vh;
   }
 
   div.container-Mesa{
-    margin: auto auto 0;
+    margin: 1vh auto 0;
     max-width: 550px;
     width: 100%;
     padding: 30px;
@@ -251,6 +255,7 @@ div.container-Mesa{
     font-size: 40px;
     margin-bottom: 10px;
     border-bottom: rgb(248, 171, 141) solid 1px;
+    padding-left: 1vw;
   }
 }
 
