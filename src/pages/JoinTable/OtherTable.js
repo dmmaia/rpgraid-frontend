@@ -34,9 +34,9 @@ export default function OtherTable(props) {
         localStorage.setItem('idTable', response.data._id)
         props.history.push('/sessions')
         }else{
-            alert('Invalid Adress');
             clicked();
             setTableId('');
+            //alert('Invalid Adress');
         }   
 
     }
