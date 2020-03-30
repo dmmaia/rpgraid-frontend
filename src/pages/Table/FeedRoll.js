@@ -14,7 +14,7 @@ export default function FeedRoll(props) {
             const response = await api.post('/rolls', { tableId })
 
             if(response.data != null){
-                setInfoRoll(response.data);
+                setInfoRoll((response.data).reverse());
             }
         }
 
