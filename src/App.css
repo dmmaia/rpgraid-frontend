@@ -157,7 +157,8 @@ div.container-Mesa{
     height: 90vh;
   }
 
-  .container-Mesa form input{
+  .container-Mesa form input,
+  .container-Mesa form select{
     width: 13vh;
     height: 4vh;
     font-size: 20px;
@@ -226,7 +227,8 @@ div.container-Mesa{
     height: 80vh;
   }
 
-  .container-Mesa form input{
+  .container-Mesa form input,
+  .container-Mesa form select{
     width: 30%;
     height: 4vh;
     font-size: 20px;
@@ -266,8 +268,9 @@ div.container-Mesa{
     max-height: 100vh;
   }
 
-  .container-Mesa form input{
-    width: 30%;
+  .container-Mesa form input,
+  .container-Mesa form select{
+    width: 33%;
     height: 4vh;
     font-size: 20px;
     position: relative;

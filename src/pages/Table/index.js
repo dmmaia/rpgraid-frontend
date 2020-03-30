@@ -8,7 +8,7 @@ export default function Table({ history }) {
 
 	const [valueRoll, setValueRoll] = useState([]);
 	const [numberDice, setNumberDice] = useState();
-	const [dice, setDice] = useState();
+	const [dice, setDice] = useState('d4');
 
 	const userId = localStorage.getItem(['user']);
 	const userName = localStorage.getItem(['name']);
@@ -16,15 +16,15 @@ export default function Table({ history }) {
 
 	if (!userId) {
 		history.push('/');
-	}else{
-		if(!tableId){
+	} else {
+		if (!tableId) {
 			history.push('/jointable');
 		}
 	}
 
 	function Roll(d) {
 		let roll
-		switch (d.toLowerCase()) {
+		switch (d) {
 			case 'd4':
 				roll = Math.random() * (5 - 1) + 1;
 				break;
@@ -48,19 +48,22 @@ export default function Table({ history }) {
 				break;
 		}
 		let realroll = parseInt(roll);
+
+		if (realroll === NaN) {
+			return null;
+		}
 		return realroll;
 	}
 
 	async function handleRoll(event) {
 		event.preventDefault();
-		
-			const response = await api.post('/rolls', { valueRoll, userName, userId, tableId })
-			console.log(response) 
 
-		
+		const response = await api.post('/rolls', { valueRoll, userName, userId, tableId })
+		console.log(response)
+
 	}
 
-	function handleDisplayAdressMobile(){
+	function handleDisplayAdressMobile() {
 		var elementAdress = document.getElementById('cc');
 		elementAdress.classList.toggle('mobile-display');
 
@@ -84,15 +87,32 @@ export default function Table({ history }) {
 
 				<form onSubmit={handleRoll}>
 					<input type="number" placeholder="N• of dice" min="1" max="10" value={numberDice} onChange={event => setNumberDice(event.target.value)} required />
-					<input type="text" placeholder="Dice" value={dice} onChange={event => setDice(event.target.value)} required />
-					<input type="submit" value="Roll!" onClick={() => {
-						let result = []
-						for (var i = 0; i < numberDice; i++) {
-							result[i] = Roll(dice);
-						}
 
-						setValueRoll(result);
-					}} />
+					<select name="roll" list="cityname"
+						placeholder="Dice"
+						value={dice}
+						onChange={event => setDice(event.target.value)}
+						required
+					>
+						<option value="d100">d100</option>
+						<option value="d20">d20</option>
+						<option value="d12">d12</option>
+						<option value="d10">d10</option>
+						<option value="d8">d8</option>
+						<option value="d6">d6</option>
+						<option value="d4" selected="selected">d4</option>
+					</select>
+
+
+							<input type="submit" value="Roll!" onClick={() => {
+								let result = []
+								for (var i = 0; i < numberDice; i++) {
+									result[i] = Roll(dice);
+								}
+
+								setValueRoll(result);
+							}} 
+							/>
 				</form>
 			</div>
 		</div>
